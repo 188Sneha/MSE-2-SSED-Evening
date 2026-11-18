@@ -29,7 +29,7 @@ jobs:
       - name: Checkout instructor-controlled evaluation files
         uses: actions/checkout@v4
         with:
-          repository: atindeRR/MSE-2-SSED-Evening
+          repository: ${{ github.repository }}
           ref: main
           path: instructor-evaluation
 
@@ -131,9 +131,9 @@ jobs:
           {
             echo "## Docker Practical CI Evaluation"
             echo ""
-            echo "- Repository: \`$GITHUB_REPOSITORY\`"
-            echo "- Commit: \`$GITHUB_SHA\`"
-            echo "- Pull request: \`${{ github.event.pull_request.html_url || 'Manual run' }}\`"
+            echo "- Repository: `$GITHUB_REPOSITORY`"
+            echo "- Commit: `$GITHUB_SHA`"
+            echo "- Pull request: `${{ github.event.pull_request.html_url || 'Manual run' }}`"
             echo ""
             echo "Review the workflow jobs and uploaded artifacts for detailed results."
           } >> "$GITHUB_STEP_SUMMARY"
