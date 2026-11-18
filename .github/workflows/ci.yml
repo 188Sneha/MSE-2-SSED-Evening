@@ -26,7 +26,12 @@ jobs:
           repository: ${{ github.event.pull_request.head.repo.full_name || github.repository }}
           ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
-      - repository: atindeRR/MSE-2-SSED-Evening
+      - name: Checkout instructor-controlled evaluation files
+        uses: actions/checkout@v4
+        with:
+          repository: atindeRR/MSE-2-SSED-Evening
+          ref: main
+          path: instructor-evaluation
 
       - name: Show submission identity
         run: |
